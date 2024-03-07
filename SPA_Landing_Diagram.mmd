@@ -1,0 +1,29 @@
+sequenceDiagram
+actor User
+participant Browser
+participant Server
+User->>+Browser: navigate to SPA
+activate Browser
+activate Server
+Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->>+Browser: HTML Document
+deactivate Browser
+deactivate Server
+activate Browser
+activate Server
+Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->>+Browser: CSS File
+deactivate Browser
+deactivate Server
+activate Browser
+activate Server
+Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->>+Browser: Java Script File
+deactivate Browser
+deactivate Server
+activate Browser
+activate Server
+Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->>+Browser: [{"content": "hi thist is a test","date": "2024-03-06T20:03:56.965Z"},...]
+deactivate Browser
+deactivate Server

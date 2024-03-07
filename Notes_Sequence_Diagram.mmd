@@ -1,0 +1,21 @@
+sequenceDiagram
+    actor User
+    participant Browser
+    participant Server
+    activate Server
+    activate Browser
+    User->>+Browser: Writes Note and press submitt button
+    Browser->>+Server: Post New Note to https://studies.cs.helsinki.fi/exampleapp/new_note
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Server-->>+Browser: HTML Document
+    deactivate Server
+    deactivate Browser
+    Browser->>+Browser: Reload Page
+    activate Server
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>+Browser: CSS File
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server-->>+Browser: JS File
+    Browser->>+Server: https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->>+Browser: [{"content": "/>?","date": "2024-03-06T20:23:49.766Z"}...],
+    deactivate Server

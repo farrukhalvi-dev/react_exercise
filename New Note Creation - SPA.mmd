@@ -1,0 +1,9 @@
+sequenceDiagram
+actor User
+participant Browser
+participant Server
+User->>+ Browser: Write a Note and Press Submitt Button
+Browser->>+Browser: Add new Note to the rendered list and re-render
+Browser->>+Server: POST new Note https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server-->>+Browser: 201 Response
+  
